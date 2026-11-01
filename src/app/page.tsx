@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
-import { Ticker } from "@/components/sections/Ticker";
+import { Maison } from "@/components/sections/Maison";
 import { Esprit } from "@/components/sections/Esprit";
 import { Explore } from "@/components/sections/Explore";
 import { Moments } from "@/components/sections/Moments";
@@ -17,7 +17,7 @@ export default function Home() {
       <JsonLd />
       <main id="contenu">
         <Hero />
-        <Ticker />
+        <Maison />
         <Esprit />
         <Explore />
         <Moments />

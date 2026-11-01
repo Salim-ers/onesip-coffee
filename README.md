@@ -25,7 +25,7 @@ NEXT_PUBLIC_SITE_URL=https://votre-domaine.fr
 
 | Route | Contenu |
 |---|---|
-| `/` | Hero, bande défilante, l'esprit One Sip, cartes « Explorer » vers chaque page, Coffee Moments |
+| `/` | Hero, « En trois gorgées » (café, matcha, signatures), l'esprit One Sip, cartes « Explorer » vers chaque page, Coffee Moments |
 | `/carte` | Nos signatures, la carte complète (onglets), la carte papier |
 | `/le-lieu` | Inside One Sip (séquence épinglée), « Dans le détail » (galerie horizontale) |
 | `/communaute` | Événements à venir, journal, archives (re-génération horaire) |
@@ -78,10 +78,10 @@ src/
     intro/             Loader (logo) + IntroProvider (synchronise rideau → entrées de page)
     transition/        LogoCurtain (rideau au logo), TransitionProvider, TransitionLink
     layout/            Header (menu mobile plein écran), Footer, nav (pages, couleurs, page suivante)
-    sections/          Hero, Ticker, Esprit, Explore, Moments, PageHero, Signatures, Carte, PaperMenu,
+    sections/          Hero, Maison, Esprit, Explore, Moments, PageHero, Signatures, Carte, PaperMenu,
                        Inside, Details, Community, Visit, NextPage
     ui/                Photo, RevealWords, MaskReveal/FadeIn, Parallax, ButtonLink, OpenStatus, Sketch,
-                       Shapes (étincelle, grain, vague), RotatingBadge, Marquee
+                       Shapes (étincelle, grain, vague), RotatingBadge, PhotoSlices
     legal/ seo/
   data/                contenus éditables (JSON)
   lib/                 accès typé aux données, horaires (fuseau Paris), événements, formats, GSAP
@@ -111,7 +111,7 @@ public/
 2. **Inside One Sip** (GSAP ScrollTrigger, desktop) : une photo plein cadre se resserre jusqu'à sa place dans une composition asymétrique pendant que les autres vues du lieu s'installent. Épinglage court (130 % de hauteur d'écran).
 3. **Nos signatures** : une ligne de noms géants glisse derrière les visuels pendant le défilement.
 4. **Dans le détail** (`/le-lieu`, desktop) : la section s'épingle et le défilement fait glisser la galerie à l'horizontale.
-5. **Bande défilante** (accueil) : une ligne serif lente entre deux filets, ponctuée de petites boissons en biscuit festonné ; elle accélère légèrement avec le défilement.
+5. **En trois gorgées** (accueil) : une grande carte cacao en ticket s'ouvre de bas en haut, puis ses trois colonnes (café, matcha, signatures) montent l'une après l'autre, chacune avec sa boisson en biscuit festonné.
 
 `prefers-reduced-motion` : pas de loader ni de rideau (navigation directe), pas d'épinglage, transformations désactivées (Motion `reducedMotion="user"`).
 
