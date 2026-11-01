@@ -15,6 +15,11 @@
   --color-matcha-deep: #56623a;
   --color-espresso: #2b211a;
   --color-taupe: #6b5a4b;
+  /* Bruns : cacao, cannelle, caramel, latte */
+  --color-cacao: #4a2e1f;
+  --color-cannelle: #8c5634;
+  --color-caramel: #c0834f;
+  --color-latte: #e3c9a8;
 
   --font-serif: var(--font-instrument), "Times New Roman", serif;
   --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
@@ -142,8 +147,7 @@ body {
   padding-bottom: 2px;
 }
 .link-underline:hover,
-.link-underline:focus-visible,
-.link-underline[aria-current="true"] {
+.link-underline:focus-visible {
   background-size: 100% 1px;
   background-position: 0% 100%;
 }
@@ -191,7 +195,7 @@ body {
   color: var(--color-creme);
 }
 .btn-solid::before {
-  background: var(--color-matcha-deep);
+  background: var(--color-cannelle);
 }
 
 .btn-ghost {
@@ -212,7 +216,7 @@ body {
   color: var(--color-espresso);
 }
 .btn-light::before {
-  background: var(--color-sable);
+  background: var(--color-latte);
 }
 
 .btn-ghost-light {
@@ -225,6 +229,12 @@ body {
 .btn-ghost-light:hover,
 .btn-ghost-light:focus-visible {
   color: var(--color-espresso);
+}
+
+/* Forme organique qui respire lentement (fonds décoratifs). */
+.blob {
+  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  animation: morph 16s ease-in-out infinite;
 }
 
 /* ---------- Line mask for typographic reveals ---------- */
@@ -284,5 +294,28 @@ html[data-intro="skip"] #intro-loader {
   80%,
   100% {
     transform: translateY(140%);
+  }
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+  33% {
+    border-radius: 63% 37% 41% 59% / 58% 36% 64% 42%;
+  }
+  66% {
+    border-radius: 38% 62% 47% 53% / 37% 61% 39% 63%;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(8deg);
   }
 }

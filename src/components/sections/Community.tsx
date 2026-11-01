@@ -6,7 +6,6 @@ import { ArrowUpRight } from "lucide-react";
 import { community, site } from "@/lib/content";
 import { eventDateParts, splitEvents } from "@/lib/events";
 import { Photo } from "@/components/ui/Photo";
-import { RevealWords } from "@/components/ui/RevealWords";
 import { FadeIn, MaskReveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 
@@ -14,6 +13,7 @@ const SOFT = [0.22, 1, 0.36, 1] as const;
 
 /**
  * Community & Events — source éditable : data/events.json.
+ * Le grand titre est dans l'en-tête de /communaute.
  * Le tri à venir / archives est fait au rendu serveur puis recalculé
  * dans le navigateur : un événement passé bascule seul dans les archives.
  */
@@ -28,27 +28,13 @@ export function Community({ initialNow }: { initialNow: string }) {
   return (
     <section
       id="communaute"
-      aria-labelledby="communaute-title"
-      className="grain relative bg-sable py-28 sm:py-36 lg:py-44"
+      aria-label="Événements et journal"
+      className="grain relative bg-sable py-24 sm:py-32 lg:py-40"
     >
       <div className="container-x relative z-[2]">
-        <div className="grid gap-8 lg:grid-cols-12">
-          <RevealWords
-            id="communaute-title"
-            lines={["Coffee brings", "us together."]}
-            className="display h-xl lg:col-span-9"
-            stagger={0.07}
-          />
-          <FadeIn className="self-end lg:col-span-3">
-            <p className="text-taupe">
-              Ateliers, rencontres et collaborations : One Sip, c&apos;est aussi un lieu où l&apos;on se retrouve.
-            </p>
-          </FadeIn>
-        </div>
-
         {/* Événements à venir */}
         {upcoming.length > 0 && (
-          <div className="mt-16 space-y-8 lg:mt-24">
+          <div className="space-y-8">
             {upcoming.map((e) => {
               const d = eventDateParts(e);
               return (
@@ -59,7 +45,7 @@ export function Community({ initialNow }: { initialNow: string }) {
                   >
                     {/* Talon du billet */}
                     <div className="relative flex items-end justify-between gap-6 border-b border-dashed border-espresso/20 p-7 md:flex-col md:items-start md:justify-between md:border-b-0 md:border-r md:p-9">
-                      <p className="label rounded-full bg-matcha-deep px-3 py-1.5 text-creme">À venir</p>
+                      <p className="label rounded-full bg-cacao px-3 py-1.5 text-creme">À venir</p>
                       <p className="text-right md:text-left">
                         <span className="display block text-[5.5rem] leading-[0.8] md:text-[7.5rem]">{d.day}</span>
                         <span className="display block text-[1.9rem] leading-tight">{d.month}</span>
@@ -106,9 +92,9 @@ export function Community({ initialNow }: { initialNow: string }) {
         )}
 
         {/* Journal de la communauté */}
-        <div className="mt-24 grid gap-10 lg:mt-32 lg:grid-cols-12">
+        <div className={`grid gap-10 lg:grid-cols-12 ${upcoming.length > 0 ? "mt-24 lg:mt-32" : ""}`}>
           <div className="lg:col-span-4">
-            <h3 className="display h-sm">Le journal</h3>
+            <h2 className="display h-sm">Le journal</h2>
             <p className="mt-4 max-w-[22rem] text-taupe">
               Quelques rencontres et collaborations partagées sur notre Instagram.
             </p>
@@ -139,7 +125,7 @@ export function Community({ initialNow }: { initialNow: string }) {
                       <span className="text-sm text-taupe">{c.kind}</span>
                       <span className="display text-[clamp(1.9rem,4vw,3.4rem)] leading-[1.02]">{c.title}</span>
                     </span>
-                    <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-espresso/20 transition-all duration-500 ease-[var(--ease-soft)] group-hover:-translate-x-4 group-hover:border-espresso group-hover:bg-espresso group-hover:text-creme">
+                    <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-espresso/20 transition-all duration-500 ease-[var(--ease-soft)] group-hover:-translate-x-4 group-hover:rotate-45 group-hover:border-cannelle group-hover:bg-cannelle group-hover:text-creme">
                       <ArrowUpRight aria-hidden className="h-5 w-5" strokeWidth={1.5} />
                     </span>
                     <span className="sr-only">Voir sur Instagram (nouvel onglet)</span>
@@ -153,7 +139,7 @@ export function Community({ initialNow }: { initialNow: string }) {
         {/* WIP */}
         <FadeIn className="mt-16 flex flex-col gap-6 rounded-[2rem] border border-dashed border-espresso/25 p-8 sm:flex-row sm:items-center sm:justify-between lg:mt-20 lg:p-10">
           <p className="max-w-[40rem]">
-            <span className="display mr-3 text-[2rem] leading-none text-matcha-deep">WIP.</span>
+            <span className="display mr-3 text-[2rem] italic leading-none text-cannelle">WIP.</span>
             D&apos;autres rencontres se préparent. Une idée d&apos;atelier ou de collaboration ? Écrivez-nous
             sur Instagram.
           </p>
@@ -165,7 +151,7 @@ export function Community({ initialNow }: { initialNow: string }) {
         {/* Archives : alimentées automatiquement */}
         {past.length > 0 && (
           <div className="mt-20">
-            <h3 className="display h-sm">Archives</h3>
+            <h2 className="display h-sm">Archives</h2>
             <ul className="mt-6 divide-y divide-espresso/15 border-y border-espresso/15">
               {past.map((e) => {
                 const d = eventDateParts(e);

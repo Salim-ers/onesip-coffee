@@ -4,3 +4,6 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# Cache des restaurations IA (scripts/enhance-photos.mjs)
+.cache

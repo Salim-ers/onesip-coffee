@@ -2,19 +2,29 @@ import { Photo } from "@/components/ui/Photo";
 import { RevealWords } from "@/components/ui/RevealWords";
 import { FadeIn, MaskReveal } from "@/components/ui/Reveal";
 import { Parallax } from "@/components/ui/Parallax";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Bean, Squiggle } from "@/components/ui/Shapes";
 import { site } from "@/lib/content";
 
 const facts = ["Café de spécialité", "Matcha", "Boissons signature", "Dog friendly"];
 
-/** L'esprit One Sip — composition magazine autour du lieu réel. */
+/** L'esprit One Sip — composition magazine autour du lieu réel, ponctuée de formes. */
 export function Esprit() {
   return (
-    <section id="esprit" aria-labelledby="esprit-title" className="relative py-28 sm:py-36 lg:py-48">
+    <section id="esprit" aria-labelledby="esprit-title" className="relative overflow-clip py-28 sm:py-36 lg:py-48">
+      {/* Grains de café flottants */}
+      <Parallax speed={-220} className="pointer-events-none absolute right-[6%] top-[14%] hidden w-10 lg:block">
+        <Bean className="w-full animate-[drift_9s_ease-in-out_infinite] text-cannelle" />
+      </Parallax>
+      <Parallax speed={160} className="pointer-events-none absolute left-[46%] top-[58%] hidden w-7 lg:block">
+        <Bean className="w-full rotate-[35deg] animate-[drift_11s_ease-in-out_infinite] text-caramel" />
+      </Parallax>
       <div className="container-x">
         <div className="grid grid-cols-1 gap-y-14 lg:grid-cols-12 lg:gap-x-8">
           {/* Titre : le slogan de la carte */}
           <div className="lg:col-span-10 lg:col-start-2">
-            <p id="esprit-title" className="label mb-6 text-matcha-deep">L&apos;esprit One Sip</p>
+            <p id="esprit-title" className="label mb-4 text-cannelle">L&apos;esprit One Sip</p>
+            <Squiggle className="mb-6 h-3 w-24 text-caramel" />
             <RevealWords
               lines={[`${site.tagline}.`]}
               className="display h-lg max-w-[14ch]"
@@ -24,6 +34,10 @@ export function Esprit() {
 
           {/* Grande photo verticale : le coin vitrine et ses chaises en arche */}
           <div className="relative lg:col-span-5 lg:col-start-1 lg:row-span-2">
+            {/* Forme organique qui respire derrière la photo */}
+            <Parallax speed={90} className="pointer-events-none absolute -left-[12%] top-[18%] aspect-square w-[85%]">
+              <span aria-hidden className="blob block h-full w-full bg-latte/70" />
+            </Parallax>
             <MaskReveal className="arch relative aspect-[4/5] overflow-hidden bg-sable lg:aspect-[3/4]">
               <Photo id="14" sizes="(min-width: 1024px) 40vw, 100vw" focus="50% 60%" />
             </MaskReveal>
@@ -53,12 +67,22 @@ export function Esprit() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <ul className="mt-10 flex flex-wrap gap-2.5" aria-label="En bref">
-                {facts.map((f) => (
-                  <li key={f} className="rounded-full border border-espresso/15 px-4 py-2 text-[0.9rem]">
+                {facts.map((f, i) => (
+                  <li
+                    key={f}
+                    className={`rounded-full px-4 py-2 text-[0.9rem] ${
+                      i === 0 ? "bg-cacao text-creme" : i === 1 ? "bg-matcha-deep text-creme" : "border border-espresso/15"
+                    }`}
+                  >
                     {f}
                   </li>
                 ))}
               </ul>
+            </FadeIn>
+            <FadeIn delay={0.25} className="mt-10">
+              <ButtonLink href="/le-lieu" variant="ghost" icon>
+                Découvrir le lieu
+              </ButtonLink>
             </FadeIn>
           </div>
 

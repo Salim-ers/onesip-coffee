@@ -4,7 +4,10 @@ import { motion } from "motion/react";
 import { Fragment, type ElementType } from "react";
 
 type Props = {
-  /** Chaque entrée est une ligne ; les mots se replient naturellement. */
+  /**
+   * Chaque entrée est une ligne ; les mots se replient naturellement.
+   * Un mot préfixé par « _ » est mis en valeur (italique, cannelle).
+   */
   lines: string[];
   as?: ElementType;
   className?: string;
@@ -36,7 +39,7 @@ export function RevealWords({
   const controlled = play !== undefined;
   return (
     <Tag id={id} className={className}>
-      <span className="sr-only">{lines.join(" ")}</span>
+      <span className="sr-only">{lines.join(" ").replace(/(^|\s)_/g, "$1")}</span>
       <span aria-hidden="true">
         {lines.map((line, li) => (
           <span key={li} className={`block ${lineClassName ?? ""}`}>
@@ -47,14 +50,14 @@ export function RevealWords({
                 <Fragment key={wi}>
                 <span className="word-mask">
                   <motion.span
-                    className="inline-block will-change-transform"
+                    className={`inline-block will-change-transform ${word.startsWith("_") ? "pr-[0.06em] italic text-cannelle" : ""}`}
                     initial={{ y: "108%" }}
                     {...(controlled
                       ? { animate: play ? { y: "0%" } : { y: "108%" } }
                       : { whileInView: { y: "0%" }, viewport: { once: true, margin: "0px 0px -12% 0px" } })}
                     transition={{ duration: 1.05, ease: EASE, delay: d }}
                   >
-                    {word}
+                    {word.replace(/^_/, "")}
                   </motion.span>
                 </span>
                 {wi < words.length - 1 ? " " : null}

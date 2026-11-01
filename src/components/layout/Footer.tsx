@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "motion/react";
 import { navLinks } from "./nav";
 import { site } from "@/lib/content";
+import { TransitionLink } from "@/components/transition/TransitionLink";
+import { Sparkle } from "@/components/ui/Shapes";
 
 const SOFT = [0.22, 1, 0.36, 1] as const;
 
-export function Footer({ home = true }: { home?: boolean }) {
-  const base = home ? "" : "/";
+export function Footer() {
   return (
     <footer className="relative overflow-clip bg-espresso text-creme">
       <div className="container-x pb-10 pt-24 sm:pt-32">
@@ -23,24 +23,34 @@ export function Footer({ home = true }: { home?: boolean }) {
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: SOFT }}
               >
-                See you soon.
+                See you <span className="italic text-caramel">soon.</span>
               </motion.p>
             </span>
           </div>
           <motion.div
-            className="mx-auto w-[min(70vw,22rem)] lg:col-span-4 lg:col-start-9 lg:w-full lg:max-w-[22rem]"
+            className="group relative mx-auto w-[min(70vw,22rem)] lg:col-span-4 lg:col-start-9 lg:w-full lg:max-w-[22rem]"
             initial={{ opacity: 0, y: 40, rotate: -4 }}
             whileInView={{ opacity: 1, y: 0, rotate: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.4, ease: SOFT, delay: 0.15 }}
           >
+            <motion.span
+              aria-hidden
+              className="arch-full absolute inset-x-[6%] -bottom-10 top-[8%] bg-cannelle/40"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              style={{ originY: 1 }}
+              transition={{ duration: 1.3, ease: SOFT, delay: 0.3 }}
+            />
+            <Sparkle className="absolute -right-2 top-0 h-10 w-10 animate-[spin_18s_linear_infinite] text-caramel" delay={0.6} />
             <Image
               src="/brand/onesip-logo-ivory.webp"
               alt={site.name}
               width={1143}
               height={1123}
               sizes="(min-width: 1024px) 22rem, 70vw"
-              className="h-auto w-full"
+              className="relative h-auto w-full transition-transform duration-700 ease-[var(--ease-soft)] group-hover:-rotate-6 group-hover:scale-[1.03]"
             />
           </motion.div>
         </div>
@@ -58,11 +68,17 @@ export function Footer({ home = true }: { home?: boolean }) {
           <nav aria-label="Navigation de pied de page">
             <p className="text-sm text-creme/60">Explorer</p>
             <ul className="mt-2 space-y-1.5">
+              <li>
+                <TransitionLink href="/" className="link-underline">
+                  Accueil
+                </TransitionLink>
+              </li>
               {navLinks.map((l) => (
-                <li key={l.id}>
-                  <a href={`${base}${l.href}`} className="link-underline">
+                <li key={l.href}>
+                  <TransitionLink href={l.href} className="link-underline">
+                    <span className="mr-2 text-sm text-caramel">{l.index}</span>
                     {l.label}
-                  </a>
+                  </TransitionLink>
                 </li>
               ))}
             </ul>
@@ -83,14 +99,14 @@ export function Footer({ home = true }: { home?: boolean }) {
             <p className="text-sm text-creme/60">Informations</p>
             <ul className="mt-2 space-y-1.5">
               <li>
-                <Link href="/mentions-legales" className="link-underline">
+                <TransitionLink href="/mentions-legales" className="link-underline">
                   Mentions légales
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link href="/confidentialite" className="link-underline">
+                <TransitionLink href="/confidentialite" className="link-underline">
                   Politique de confidentialité
-                </Link>
+                </TransitionLink>
               </li>
             </ul>
           </div>

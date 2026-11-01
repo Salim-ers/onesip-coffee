@@ -6,6 +6,7 @@ import { Photo } from "@/components/ui/Photo";
 import { RevealWords } from "@/components/ui/RevealWords";
 import { FadeIn, MaskReveal } from "@/components/ui/Reveal";
 import { NewBadge } from "@/components/ui/NewBadge";
+import { Sparkle } from "@/components/ui/Shapes";
 import { findMenuItem, type MenuItem } from "@/lib/content";
 import { formatPrice, priceLabel } from "@/lib/format";
 
@@ -20,7 +21,7 @@ function SignatureList({ items, light }: { items: MenuItem[]; light?: boolean })
         <li key={it.id} className="flex items-baseline justify-between gap-6">
           <span className="display text-[1.55rem] leading-[1.1] sm:text-[1.9rem]">
             {it.name}
-            {it.isNew && <NewBadge className={`ml-3 translate-y-[-0.3em] align-middle ${light ? "!bg-creme !text-matcha-deep" : ""}`} />}
+            {it.isNew && <NewBadge className={`ml-3 translate-y-[-0.3em] align-middle ${light ? "!bg-caramel !text-espresso" : ""}`} />}
           </span>
           <span className="tabular shrink-0 text-lg font-medium" aria-label={priceLabel(it.price)}>
             {formatPrice(it.price)} €
@@ -32,9 +33,9 @@ function SignatureList({ items, light }: { items: MenuItem[]; light?: boolean })
 }
 
 /**
- * Nos signatures — séquence n°3 : une ligne de noms géants glisse
- * derrière les visuels pendant le défilement, typographie et photographie
- * se croisent. Seules les photos réellement fournies sont utilisées :
+ * Nos signatures — séquence n°3, sur fond cacao : une ligne de noms géants
+ * glisse derrière les visuels pendant le défilement, typographie et
+ * photographie se croisent. Seules les photos réellement fournies sont utilisées :
  * le duo Spéculoos a sa photo, le duo Biscoff est présenté en typographie.
  */
 export function Signatures() {
@@ -52,7 +53,7 @@ export function Signatures() {
       ref={ref}
       id="signatures"
       aria-labelledby="signatures-title"
-      className="grain relative overflow-clip bg-sable py-28 sm:py-36 lg:py-44"
+      className="relative overflow-clip bg-cacao py-28 text-creme sm:py-36 lg:py-44"
     >
       <div className="container-x relative z-[2]">
         <div className="grid gap-8 lg:grid-cols-12">
@@ -61,8 +62,9 @@ export function Signatures() {
             lines={["Nos signatures."]}
             className="display h-lg lg:col-span-7"
           />
-          <FadeIn className="self-end lg:col-span-4 lg:col-start-9">
-            <p className="lede text-taupe">Des créations à découvrir, à savourer et à partager.</p>
+          <FadeIn className="relative self-end lg:col-span-4 lg:col-start-9">
+            <Sparkle className="mb-6 h-10 w-10 animate-[spin_20s_linear_infinite] text-caramel" delay={0.3} />
+            <p className="lede text-creme/75">Des créations à découvrir, à savourer et à partager.</p>
           </FadeIn>
         </div>
       </div>
@@ -71,7 +73,7 @@ export function Signatures() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-[44%] z-[1] lg:top-[46%]">
         <motion.p
           style={{ x }}
-          className="display whitespace-nowrap text-[clamp(6rem,19vw,19rem)] leading-none text-[#d9c4a7]"
+          className="display whitespace-nowrap text-[clamp(6rem,19vw,19rem)] leading-none text-[#5d3a27]"
         >
           Matcha Biscoff&ensp;·&ensp;Café Biscoff&ensp;·&ensp;Crème salée Spéculoos&ensp;·&ensp;Matcha Biscoff
         </motion.p>
@@ -84,14 +86,14 @@ export function Signatures() {
             aria-labelledby="sig-speculoos"
             className="w-[82vw] max-w-[26rem] shrink-0 snap-center lg:col-span-5 lg:col-start-2 lg:w-auto lg:max-w-none"
           >
-            <MaskReveal className="arch relative aspect-[3/4.4] overflow-hidden bg-sable-deep">
+            <MaskReveal className="arch relative aspect-[3/4.4] overflow-hidden bg-cannelle">
               <Photo id="09" sizes="(min-width: 1024px) 38vw, 82vw" focus="50% 55%" quality={80} />
             </MaskReveal>
             <div className="mt-8">
-              <h3 id="sig-speculoos" className="label mb-5 text-matcha-deep">
+              <h3 id="sig-speculoos" className="label mb-5 text-latte">
                 Crème salée Spéculoos
               </h3>
-              <SignatureList items={speculoos} />
+              <SignatureList items={speculoos} light />
             </div>
           </article>
 
@@ -103,24 +105,28 @@ export function Signatures() {
           >
             <MaskReveal
               delay={0.15}
-              className="arch relative flex aspect-[3/4.4] flex-col items-center justify-center overflow-hidden bg-matcha-deep text-creme"
+              className="arch relative flex aspect-[3/4.4] flex-col items-center justify-center overflow-hidden bg-caramel text-espresso"
             >
-              <div className="flex h-full w-full flex-col items-center justify-center px-8 text-center">
+              {/* cercles concentriques, comme une tasse vue du dessus */}
+              <span aria-hidden className="absolute left-1/2 top-1/2 aspect-square w-[135%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-espresso/15" />
+              <span aria-hidden className="absolute left-1/2 top-1/2 aspect-square w-[100%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-espresso/15" />
+              <span aria-hidden className="absolute left-1/2 top-1/2 aspect-square w-[66%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-espresso/20" />
+              <div className="relative flex h-full w-full flex-col items-center justify-center px-8 text-center">
                 <span className="relative mb-6 flex h-20 w-20 items-center justify-center">
-                  <span className="absolute inset-0 animate-[spin_24s_linear_infinite] rounded-full border border-dashed border-creme/50" />
+                  <span className="absolute inset-0 animate-[spin_24s_linear_infinite] rounded-full border border-dashed border-espresso/50" />
                   <span className="label">New</span>
                 </span>
                 <span className="display text-[clamp(4rem,9vw,7.5rem)] leading-[0.9]">Biscoff</span>
-                <span className="mt-5 max-w-[16rem] text-creme/80">
+                <span className="mt-5 max-w-[16rem] text-espresso/80">
                   En matcha ou en café, toujours glacé. Les petites dernières de la carte.
                 </span>
               </div>
             </MaskReveal>
             <div className="mt-8">
-              <h3 id="sig-biscoff" className="label mb-5 text-matcha-deep">
+              <h3 id="sig-biscoff" className="label mb-5 text-latte">
                 Biscoff
               </h3>
-              <SignatureList items={biscoff} />
+              <SignatureList items={biscoff} light />
             </div>
           </motion.article>
         </div>

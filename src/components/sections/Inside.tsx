@@ -20,7 +20,7 @@ type Tile = {
 const tiles: Tile[] = [
   {
     id: "16",
-    sizes: "(min-width: 1024px) 21vw, 50vw",
+    sizes: "(min-width: 1024px) 28vw, 50vw",
     lg: "lg:left-[3%] lg:top-[9%] lg:w-[21%] lg:h-[64%]",
     sm: "aspect-[3/4]",
     shape: "arch",
@@ -123,9 +123,9 @@ export function Inside() {
           className="relative col-span-2 aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-sable lg:absolute lg:left-[29%] lg:top-[11%] lg:z-[1] lg:aspect-auto lg:h-[55%] lg:w-[40%]"
         >
           <MaskReveal className="absolute inset-0">
-            <Photo id="20" sizes="(min-width: 1024px) 100vw, 100vw" quality={80} focus="50% 50%" />
+            <Photo id="20" sizes="100vw" quality={80} focus="50% 50%" />
           </MaskReveal>
-          <div data-veil aria-hidden className="pointer-events-none absolute inset-0 hidden bg-espresso/30 lg:block motion-reduce:lg:hidden" />
+          <div data-veil aria-hidden className="pointer-events-none absolute inset-0 hidden bg-cacao/40 lg:block motion-reduce:lg:hidden" />
           <div
             data-overlay-title
             aria-hidden
@@ -152,7 +152,7 @@ export function Inside() {
           className="col-span-2 mt-6 max-w-[30rem] lg:absolute lg:left-[46%] lg:top-[71%] lg:mt-0 lg:w-[23%]"
         >
           <p className="display hidden text-[clamp(1.8rem,2.4vw,2.6rem)] leading-[1.05] lg:block" aria-hidden>
-            A little place to stay.
+            A little place to <span className="italic text-cannelle">stay.</span>
           </p>
           <p className="mt-3 text-taupe">
             Les grandes fenêtres sur la rue, le comptoir en pierre claire, la machine espresso, les

@@ -1,13 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
+import { useCallback, useId, useRef, useState, type KeyboardEvent } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { X } from "lucide-react";
 import { menu, type MenuCategory } from "@/lib/content";
 import { formatPrice, priceLabel } from "@/lib/format";
-import { Photo } from "@/components/ui/Photo";
 import { RevealWords } from "@/components/ui/RevealWords";
-import { FadeIn } from "@/components/ui/Reveal";
 import { NewBadge } from "@/components/ui/NewBadge";
 import { HandRule, sketches } from "@/components/ui/Sketch";
 
@@ -68,12 +65,13 @@ function Items({ cat }: { cat: MenuCategory }) {
   );
 }
 
-/** La carte — interprétation digitale de la carte papier, données dans data/menu.json. */
+/**
+ * La carte — interprétation digitale de la carte papier, données dans data/menu.json.
+ * Le titre de page et la carte papier sont dans l'en-tête de /carte.
+ */
 export function Carte() {
   const [active, setActive] = useState(0);
-  const [paperOpen, setPaperOpen] = useState(false);
   const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
-  const dialogRef = useRef<HTMLDialogElement>(null);
   const uid = useId();
   const current = menu[active] ?? menu[0]!;
 
@@ -91,45 +89,16 @@ export function Carte() {
     }
   }, [active]);
 
-  useEffect(() => {
-    const d = dialogRef.current;
-    if (!d) return;
-    if (paperOpen && !d.open) d.showModal();
-    if (!paperOpen && d.open) d.close();
-  }, [paperOpen]);
-
   return (
-    <section id="carte" aria-labelledby="carte-title" className="relative py-28 sm:py-36 lg:py-44">
+    <section id="menu" aria-labelledby="carte-title" className="relative py-28 sm:py-36 lg:py-44">
       <div className="container-x">
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <RevealWords id="carte-title" lines={["La carte."]} className="display h-lg" />
-            <FadeIn>
-              <p className="lede mt-6 max-w-[32rem] text-taupe">
-                Café, matcha et douceurs du moment. Prix en euros, laits végétaux sans supplément.
-              </p>
-            </FadeIn>
-          </div>
-          {/* La carte papier, en photo */}
-          <FadeIn className="hidden justify-self-end lg:col-span-3 lg:col-start-10 lg:block">
-            <button
-              type="button"
-              onClick={() => setPaperOpen(true)}
-              className="group block text-left"
-            >
-              <span className="relative block aspect-[1555/2560] w-40 rotate-[4deg] overflow-hidden rounded-md bg-sable shadow-[0_25px_50px_-25px_rgba(43,33,26,0.5)] transition-transform duration-700 ease-[var(--ease-soft)] group-hover:rotate-0 group-hover:scale-[1.03]">
-                <Photo id="07" sizes="10rem" alt="" />
-              </span>
-              <span className="link-underline mt-5 inline-block text-sm font-medium">Voir la carte papier</span>
-            </button>
-          </FadeIn>
-        </div>
+        <RevealWords id="carte-title" lines={["Au _menu."]} className="display h-md" />
 
         {/* Onglets */}
         <div
           role="tablist"
           aria-label="Catégories de la carte"
-          className="-mx-[var(--gutter)] mt-14 flex gap-2 overflow-x-auto px-[var(--gutter)] hide-scrollbar lg:mt-20"
+          className="-mx-[var(--gutter)] mt-10 flex gap-2 overflow-x-auto px-[var(--gutter)] hide-scrollbar lg:mt-14"
         >
           {menu.map((c, i) => {
             const Icon = sketches[c.icon];
@@ -154,7 +123,7 @@ export function Carte() {
                 {selected && (
                   <motion.span
                     layoutId={`${uid}-pill`}
-                    className="absolute inset-0 -z-0 rounded-full bg-espresso"
+                    className="absolute inset-0 -z-0 rounded-full bg-cacao"
                     transition={{ type: "spring", stiffness: 380, damping: 34 }}
                   />
                 )}
@@ -181,7 +150,7 @@ export function Carte() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.18 } }}
             >
-              <h3 className="display mb-6 text-[2.1rem] text-matcha-deep">{current.title}</h3>
+              <h3 className="display mb-6 text-[2.1rem] italic text-cannelle">{current.title}</h3>
               <Items cat={current} />
             </motion.div>
           </AnimatePresence>
@@ -190,39 +159,7 @@ export function Carte() {
         <p className="mt-12 text-sm text-taupe">
           Votre cup bienvenue ici : 0,30 € de remise si vous venez avec votre gobelet.
         </p>
-
-        <button
-          type="button"
-          onClick={() => setPaperOpen(true)}
-          className="link-underline mt-4 text-sm font-medium lg:hidden"
-        >
-          Voir la carte papier
-        </button>
       </div>
-
-      <dialog
-        ref={dialogRef}
-        onClose={() => setPaperOpen(false)}
-        onClick={(e) => {
-          if (e.target === dialogRef.current) setPaperOpen(false);
-        }}
-        aria-label="Carte papier One Sip Coffee"
-        className="m-auto h-[92svh] max-h-none w-auto max-w-[94vw] overflow-visible bg-transparent p-0 backdrop:bg-espresso/70 backdrop:backdrop-blur-sm"
-      >
-        {paperOpen && (
-          <div className="relative h-full aspect-[1555/2560] max-w-[94vw] overflow-hidden rounded-lg bg-sable">
-            <Photo id="07" sizes="(min-width: 768px) 56vh, 94vw" quality={80} />
-            <button
-              type="button"
-              onClick={() => setPaperOpen(false)}
-              className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-creme text-espresso"
-            >
-              <X className="h-5 w-5" aria-hidden />
-              <span className="sr-only">Fermer</span>
-            </button>
-          </div>
-        )}
-      </dialog>
     </section>
   );
 }

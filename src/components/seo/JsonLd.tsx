@@ -28,7 +28,7 @@ export function JsonLd() {
       addressCountry: site.address.country,
     },
     sameAs: [site.instagram.url],
-    hasMenu: `${siteUrl}/#carte`,
+    hasMenu: `${siteUrl}/carte`,
   };
   if (site.hours.verified) {
     data.openingHoursSpecification = hours

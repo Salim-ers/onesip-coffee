@@ -1,18 +1,12 @@
 import type { ReactNode } from "react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 
 export function LegalShell({ title, updated, children }: { title: string; updated?: string; children: ReactNode }) {
   return (
-    <>
-      <Header home={false} />
-      <main id="contenu" className="container-x pb-28 pt-[calc(var(--header-h)+4rem)] sm:pt-[calc(var(--header-h)+6rem)]">
-        <h1 className="display h-lg max-w-[14ch]">{title}</h1>
-        {updated && <p className="mt-6 text-sm text-taupe">Dernière mise à jour : {updated}</p>}
-        <div className="legal mt-16 max-w-[44rem] space-y-14">{children}</div>
-      </main>
-      <Footer home={false} />
-    </>
+    <main id="contenu" className="container-x pb-28 pt-[calc(var(--header-h)+4rem)] sm:pt-[calc(var(--header-h)+6rem)]">
+      <h1 className="display h-lg max-w-[14ch]">{title}</h1>
+      {updated && <p className="mt-6 text-sm text-taupe">Dernière mise à jour : {updated}</p>}
+      <div className="legal mt-16 max-w-[44rem] space-y-14">{children}</div>
+    </main>
   );
 }
 

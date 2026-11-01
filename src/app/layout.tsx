@@ -4,6 +4,10 @@ import { figtree, instrument } from "./fonts";
 import { site } from "@/lib/content";
 import { siteUrl } from "@/lib/site-url";
 import { IntroProvider } from "@/components/intro/IntroProvider";
+import { Loader } from "@/components/intro/Loader";
+import { TransitionProvider } from "@/components/transition/TransitionProvider";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { INTRO_KEY } from "@/lib/intro";
 
 const title = `${site.name} — Café et bons moments partagés, Paris 11e`;
@@ -15,7 +19,6 @@ export const metadata: Metadata = {
     "Coffee shop au 11 rue Camille Desmoulins, Paris 11e. Café de spécialité, matcha, boissons signature et créations gourmandes. Dog friendly.",
   applicationName: site.name,
   keywords: ["coffee shop Paris 11", "café de spécialité", "matcha Paris", "rue Camille Desmoulins", "One Sip Coffee"],
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -38,7 +41,12 @@ const introScript = `try{if(sessionStorage.getItem("${INTRO_KEY}")||matchMedia("
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${instrument.variable} ${figtree.variable}`} suppressHydrationWarning>
+    <html
+      lang="fr"
+      className={`${instrument.variable} ${figtree.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: introScript }} />
         <noscript>
@@ -52,7 +60,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Aller au contenu
         </a>
-        <IntroProvider>{children}</IntroProvider>
+        <IntroProvider>
+          <TransitionProvider>
+            <Loader />
+            <Header />
+            {children}
+            <Footer />
+          </TransitionProvider>
+        </IntroProvider>
       </body>
     </html>
   );
