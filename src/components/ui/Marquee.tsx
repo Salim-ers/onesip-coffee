@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import type { ReactNode } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -11,7 +11,6 @@ import {
   useTransform,
   useVelocity,
 } from "motion/react";
-import { StarGlyph } from "./Shapes";
 
 const wrap = (min: number, max: number, v: number) => {
   const r = max - min;
@@ -19,45 +18,40 @@ const wrap = (min: number, max: number, v: number) => {
 };
 
 /**
- * Bandeau typographique infini. Il accélère avec la vitesse de défilement
- * et change de sens quand on remonte la page.
+ * Bandeau infini, lent et régulier. Il accélère légèrement avec la vitesse
+ * de défilement, sans jamais changer de sens.
  */
 export function Marquee({
   items,
-  speed = 2.2,
-  reverse = false,
+  separator,
+  speed = 1,
   className,
-  starClassName = "text-caramel",
 }: {
-  items: string[];
+  items: ReactNode[];
+  /** Élément placé après chaque item (reçoit son rang) */
+  separator?: (i: number) => ReactNode;
   /** % de la largeur du bandeau par seconde */
   speed?: number;
-  reverse?: boolean;
   className?: string;
-  starClassName?: string;
 }) {
   const reduce = useReducedMotion();
   const base = useMotionValue(0);
   const { scrollY } = useScroll();
-  const velocity = useSpring(useVelocity(scrollY), { damping: 50, stiffness: 400 });
-  const boost = useTransform(velocity, [0, 1000], [0, 4], { clamp: false });
+  const velocity = useSpring(useVelocity(scrollY), { damping: 50, stiffness: 300 });
+  const boost = useTransform(velocity, [-2000, 0, 2000], [1.5, 0, 1.5]);
   const x = useTransform(base, (v) => `${wrap(-50, 0, v)}%`);
-  const dir = useRef(reverse ? 1 : -1);
 
   useAnimationFrame((_, delta) => {
     if (reduce) return;
-    const b = boost.get();
-    if (b < 0) dir.current = reverse ? -1 : 1;
-    else if (b > 0) dir.current = reverse ? 1 : -1;
-    base.set(base.get() + dir.current * speed * (delta / 1000) * (1 + Math.abs(b)));
+    base.set(base.get() - speed * (delta / 1000) * (1 + boost.get()));
   });
 
   const row = (
     <span className="flex shrink-0 items-center">
       {[...items, ...items].map((t, i) => (
         <span key={i} className="flex items-center">
-          <span className="px-[0.4em]">{t}</span>
-          <StarGlyph className={`h-[0.4em] w-[0.4em] shrink-0 ${starClassName}`} />
+          <span className="px-[0.55em]">{t}</span>
+          {separator?.(i)}
         </span>
       ))}
     </span>

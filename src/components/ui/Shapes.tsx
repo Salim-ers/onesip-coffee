@@ -35,15 +35,6 @@ export function Sparkle({ className, delay = 0, play }: Animated) {
   );
 }
 
-/** Étincelle statique, pour les bandeaux. */
-export function StarGlyph({ className }: Props) {
-  return (
-    <svg viewBox="0 0 48 48" aria-hidden className={className}>
-      <path d={STAR} fill="currentColor" />
-    </svg>
-  );
-}
-
 /** Grain de café, avec son sillon en S. */
 export function Bean({ className }: Props) {
   return (
