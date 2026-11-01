@@ -1,0 +1,58 @@
+{
+  "_comment": "Informations pratiques et légales. Les champs à null ne sont jamais affichés en production : complétez-les après confirmation.",
+  "name": "ONE SIP COFFEE",
+  "shortName": "One Sip",
+  "tagline": "Café et bons moments partagés",
+  "description": "Coffee shop au 11 rue Camille Desmoulins, Paris 11e. Café de spécialité, matcha et créations gourmandes.",
+  "address": {
+    "street": "11 rue Camille Desmoulins",
+    "postalCode": "75011",
+    "city": "Paris",
+    "country": "FR",
+    "district": "Paris 11e"
+  },
+  "geo": null,
+  "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=11+rue+Camille+Desmoulins%2C+75011+Paris",
+  "instagram": {
+    "handle": "@onesip.paris",
+    "url": "https://www.instagram.com/onesip.paris/"
+  },
+  "phone": null,
+  "email": null,
+  "hours": {
+    "_comment": "Horaires de référence, à revalider avant publication. Passez verified à true une fois confirmés : ils seront alors aussi publiés dans les données structurées Google.",
+    "verified": false,
+    "timezone": "Europe/Paris",
+    "days": [
+      { "day": 1, "label": "Lundi", "open": "08:30", "close": "16:30" },
+      { "day": 2, "label": "Mardi", "open": null, "close": null },
+      { "day": 3, "label": "Mercredi", "open": null, "close": null },
+      { "day": 4, "label": "Jeudi", "open": "08:30", "close": "16:30" },
+      { "day": 5, "label": "Vendredi", "open": "08:30", "close": "16:30" },
+      { "day": 6, "label": "Samedi", "open": "10:00", "close": "17:30" },
+      { "day": 0, "label": "Dimanche", "open": "10:00", "close": "17:30" }
+    ],
+    "exceptions": []
+  },
+  "houseRules": [
+    { "id": "dogs", "label": "Dog friendly", "detail": "Les chiens sont les bienvenus." },
+    { "id": "laptops", "label": "Pas d'ordinateur le week-end", "detail": "Le samedi et le dimanche, on laisse les ordinateurs portables à la maison." }
+  ],
+  "legal": {
+    "companyName": "ONE SIP COFFEE",
+    "legalForm": "EURL (entreprise unipersonnelle à responsabilité limitée)",
+    "shareCapital": "1 000 €",
+    "siren": "941 607 830",
+    "siret": "941 607 830 00010",
+    "rcs": "RCS Paris 941 607 830",
+    "registeredOffice": "11 rue Camille Desmoulins, 75011 Paris",
+    "manager": "Vu Nguyen Hoang Long",
+    "creationDate": "2025-01-24",
+    "activity": "Coffee shop, débit de boissons",
+    "vatNumber": null,
+    "publicationDirector": null,
+    "contactEmail": null,
+    "contactPhone": null,
+    "host": null
+  }
+}

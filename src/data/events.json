@@ -1,0 +1,46 @@
+{
+  "_comment": "Événements et rencontres. Un événement dont la date de fin est passée bascule automatiquement dans les archives. Mettez 'published' à false pour masquer une entrée sans la supprimer. N'ajoutez une photo ou un lien qu'avec l'accord des personnes concernées.",
+  "events": [
+    {
+      "id": "atelier-cafe-dessin-2026-11-14",
+      "published": true,
+      "title": "Atelier Café & Dessin",
+      "start": "2026-11-14T10:00:00+01:00",
+      "end": "2026-11-14T12:00:00+01:00",
+      "summary": "Deux heures pour dessiner, un café à la main, au 11 rue Camille Desmoulins.",
+      "bookingUrl": "https://www.billetweb.fr/atelier-cafe-dessin-one-sip",
+      "bookingLabel": "Réserver ma place",
+      "photo": "19"
+    }
+  ],
+  "community": [
+    {
+      "id": "soi",
+      "published": true,
+      "title": "SOI x ONE SIP",
+      "kind": "Collaboration",
+      "url": null
+    },
+    {
+      "id": "tsc-biogena",
+      "published": true,
+      "title": "TSC x One Sip / BIOGENA",
+      "kind": "Collaboration",
+      "url": null
+    },
+    {
+      "id": "your-friendly-neighbors",
+      "published": true,
+      "title": "Your Friendly Neighbors",
+      "kind": "Rencontre",
+      "url": null
+    },
+    {
+      "id": "adidas-runners",
+      "published": true,
+      "title": "Adidas Runners",
+      "kind": "Rencontre",
+      "url": null
+    }
+  ]
+}

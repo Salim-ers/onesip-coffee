@@ -1,0 +1,122 @@
+{
+  "01": {
+    "src": "/photos/01_onesip_salle-principale.webp",
+    "width": 2560,
+    "height": 2067,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwBACdASoUABAAPu1iqU2ppaOiMAgBMB2JZgC7AB07JKYXFb4i3LbIV4AA/rPzp3IaMg2tuCj1rrlv1NgUvR/NWZ7urYXu43SHna/0cNcvlaUanaZfky1NpLRAav92bPmgXe9/5YPw5Yga1U0yhyAA"
+  },
+  "02": {
+    "src": "/photos/02_onesip_accueil-et-vitrine.webp",
+    "width": 2560,
+    "height": 2067,
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoUABAAPu1iqU2ppaOiMAgBMB2JYgCdMoMjbEFYroBVuxDz0toAAP5kuBY9iXvuSPpx0YrfPIPptlK9QPH6hxgT263AuTlrzqR6U2sgtDE0Z+kSH9QU/DWdTHX5qitul7pqlC26RVLNlVuJ7jpOjJKaJp3RDSAA"
+  },
+  "03": {
+    "src": "/photos/03_onesip_comptoir-principal.webp",
+    "width": 2560,
+    "height": 2067,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoUABAAPu1iqU2ppaOiMAgBMB2JZACw7CKi80Pf8PMtnywAAPeBHVxvn48xRiYjb6JDmM6mOOYhu+ToJy4AKeMTJqZ42njCar5C14pyFEruv1PV3BZNOVIMcC+yA7VzgznRGIvBxk2CBOAA"
+  },
+  "04": {
+    "src": "/photos/04_onesip_facade-cafe.webp",
+    "width": 2560,
+    "height": 2067,
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBACdASoUABAAPu1iqU2ppaOiMAgBMB2JYwCdMoADTr8gyy9DRKZ/sAD+B4PTfNXIiMWjyLoHnB/VdMDVxsDVaWQzvh4U0LdLiOv9Vb5JwfbUNnhcr7c99J4PfSCiLBlsKhWNBPSVNOO0IYj7JM4rDF1/RguZIgQR4QQAAAA="
+  },
+  "05": {
+    "src": "/photos/05_onesip_enseigne-exterieure.webp",
+    "width": 2560,
+    "height": 2067,
+    "blurDataURL": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwAwCdASoUABAAPu1iqU2ppaOiMAgBMB2JYwCdABooVQiiEEGzoyy4APa9htoxbHZi3p13Nv3IXCyIq+00DCaUg9aGK/xHtVhbMUEw5aVGy/Bi5EuPlP7UajlQNylzq7x+paOhviaI9Sa+mPb2hEnilbpD/+ieO0AAAA=="
+  },
+  "06": {
+    "src": "/photos/06_onesip_matcha-latte-plateau.webp",
+    "width": 1920,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACQBACdASoPABQAPu1iqU2ppaOiMAgBMB2JYgCdMoR3ACxlf+K3tNMaSrFcZgAA/tKUKF7OgS/6th/YcXKqJJQ2bZfGQ++0q4SzTCJ+9VjNahtv8AkjCVFHUpku7WWF0LFJSeFikrhiwbGPMXJe+VlP0Io3jPnjXUUEIOxIZssLrmIAAAA="
+  },
+  "07": {
+    "src": "/photos/07_onesip_carte-boissons.webp",
+    "width": 1555,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAwAwCdASoMABQAPu1iqU2ppaOiMAgBMB2JZWR5ADdSpnAgAP7vIt3nWYbC3cCXSton+VJxcRDAnjHaFtzHdcAA"
+  },
+  "08": {
+    "src": "/photos/08_onesip_affogato-biscuit.webp",
+    "width": 1440,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQBACdASoLABQAPu1iqU2ppaOiMAgBMB2JYgCdMoMnJDwardhaOJRN+uwAAPz/3obXxrlN9aY/sAkzdHk+7hO9U16zZmM+ip2zCRltKv4q/aGFTtRO0X9ep1BZIcF4vKxE2764u9qAp+AA"
+  },
+  "09": {
+    "src": "/photos/09_onesip_duo-lattes-speculoos.webp",
+    "width": 1440,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwAwCdASoLABQAPu1iqU2ppaOiMAgBMB2JYwC7ABsVP1gmkvkGAAD9cITql1e4vtbb/Fpi4bZP8NWuWNMjyTuZjs4cWNpFX7CagVA/9Z51b4CFL6MnaELjw5FEwEn/Nl7lWOugDNxI5rx7gAA="
+  },
+  "10": {
+    "src": "/photos/10_onesip_latte-art-et-plante.webp",
+    "width": 1921,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoPABQAPu1iqU2ppaOiMAgBMB2JZQDCgBE9hwN34AwwR1gA/fiCEgvJChPwl2mU8rkEybEvvNeJwKBzRIBHup0IL2UyuBz8HdpdpQiVazA5KNnSKaXWXyLmxq3/i5dK4UH4oa3IHDy4fu4eOfZTDEWBnO2+ut1gAAA="
+  },
+  "11": {
+    "src": "/photos/11_onesip_ceramiques-artisanales.webp",
+    "width": 1921,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoPABQAPu1iqU2ppaOiMAgBMB2JYwC/OCKh8YKRnX4kNehSAAD94lQnaIbuTJl+N6+IkI0yiZkN4jH2Ki4sxAkf5PhycDEd9TjOi+wwM3ZSF37hYQpBSPVGh1yEfuXD2qMTzgHUFha5Y2YrxNTr4fQA"
+  },
+  "12": {
+    "src": "/photos/12_onesip_iced-latte-et-cookie.webp",
+    "width": 1921,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoPABQAPu1iqU2ppaOiMAgBMB2JZQCdAB5ymMwhpFGcX868AP7jhI5rmwEbuqgDO7ZxTI87xn8s3eWpFshnAyBuV+9pYJkVA6BOmwwQyrNL1cNFWsCHlzWyBSPg/Dw3QP9aI3XX6vd7els3ZbGePWAA"
+  },
+  "13": {
+    "src": "/photos/13_onesip_gobelets-identite.webp",
+    "width": 1917,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoPABQAPu1iqk2ppaQiMAgBMB2JZQAAK4hTQx8F1Rp2wAD50de6fPlPLjNh4K0wrPNKKvTfa6ywdSD1OVNe1ljMnDRgAA=="
+  },
+  "14": {
+    "src": "/photos/14_onesip_salle-cote-vitrine.webp",
+    "width": 1921,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwAwCdASoPABQAPu1iqU2ppaOiMAgBMB2JQBdgZYJzwHBMQXZQpt/AAMx3qPVt1TReN/bv2Q9cqIONYUOTM5mi2w+16lqKSpGU/QYXPhNoi92gcWVY4OYdHOSZvDbjXSbeBcPxB85fRGBGyGMpugrL+h38xK9DuIQAAA=="
+  },
+  "15": {
+    "src": "/photos/15_onesip_enseigne-gros-plan.webp",
+    "width": 1921,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoPABQAPu1iqU2ppaOiMAgBMB2JZwAAWrPVldvLyPl/dNo4AP0CvUzp4E8F+qeVioB8ZOzK78uDp+UpczJCWtvd6esiEMqJCg/jkJb3xPXQN7sOX7rRFOW86YA+JDt/WZR8jEv298LFyAAA"
+  },
+  "16": {
+    "src": "/photos/16_onesip_machine-expresso.webp",
+    "width": 1921,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoPABQAPu1iqU2ppaOiMAgBMB2JQBOmUABd0IdK6hZsTdQA/doGeUdt1ZDShc0xTrj+C2sAg9FzD241e9i2Y9VxsswCIntvDnCDoc/V4wYSqNZUEtLjJjUxUW+6WWR/a3Mf19IvDQ+l1lA+RiTgJcVmx2S+pyGhOAA="
+  },
+  "17": {
+    "src": "/photos/17_onesip_iced-coffee-a-emporter.webp",
+    "width": 1921,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoPABQAPu1oqk6ppiQiMAgBMB2JYwC06Bued0XbmSIXJl+AAPwVIoNxkNq2vDzYucrN1Uj7iMbNJB5j0MOXgf4mjmIGhke7A0gRSc0+oEfOjJhU7luAAA=="
+  },
+  "18": {
+    "src": "/photos/18_onesip_black-sesame-latte.webp",
+    "width": 2316,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBACdASoSABQAPu1ur1IppiQjqAgBMB2JZwDH5A8ooQiHEeXDseCa5GAA/I7PvDdtbR77lJ9bmAuAC+Zua0uLmcRh5cc5WZtphIT8bIHKHvEKRLCg0w4OaCgSHocWUPkGGe6uAlyvELXJO9AIS1vPX6WXrgluy3HCzTe0j7O6GG8JWwBC9dQ89SBrGJNugmsmrzh4AAA="
+  },
+  "19": {
+    "src": "/photos/19_onesip_latte-art-plateau-bois.webp",
+    "width": 1920,
+    "height": 2560,
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQBACdASoPABQAPu1iqU2ppaQiMAgBMB2JbACdMoACDyV4NvCGmBjLkvYAAN9Weobf/I6bVplCxkYctE3Watz8IdolXwJklnPIn27Agr3mSTGjh/HzqFBBk4ePR2fDb06JjXU2dqnHXFqp/Jyx2AJGIyHKGmoAAAA="
+  },
+  "20": {
+    "src": "/photos/20_onesip_comptoir-cote-fenetre.webp",
+    "width": 2560,
+    "height": 2067,
+    "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQBACdASoUABAAPu1iqU2ppaOiMAgBMB2JYgC7Ef/jeAHsM/YshpfYe6TEv3kk0AD+VV3EAl0Wxx+TmKIfqrvQnKRkV8RsglEsk3G6VQE6o6hgxqSf1GjbyM1nS1Clw98FflxRk0yBRl6OlTVa1DAo54r7TJtjjZwto5wYJ9UQ+UbrvRWQRS8bljP1CiSPXiUAAA=="
+  }
+}

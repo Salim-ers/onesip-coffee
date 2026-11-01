@@ -1,0 +1,76 @@
+{
+  "_comment": "Carte relevée sur la photo de la carte papier (photo 07). Prix en euros. 'isNew' affiche la pastille New. Modifiez librement noms et prix ici.",
+  "currency": "EUR",
+  "categories": [
+    {
+      "id": "signatures",
+      "label": "Signatures",
+      "title": "Nos boissons signature",
+      "icon": "star",
+      "items": [
+        { "id": "iced-matcha-biscoff", "name": "Iced Matcha Biscoff", "price": 7, "isNew": true },
+        { "id": "iced-cafe-biscoff", "name": "Iced Café Biscoff", "price": 7, "isNew": true },
+        { "id": "iced-matcha-creme-salee-speculoos", "name": "Iced Matcha Crème Salée Spéculoos", "price": 6.9 },
+        { "id": "iced-cafe-creme-salee-speculoos", "name": "Iced Café Crème Salée Spéculoos", "price": 6.9 }
+      ]
+    },
+    {
+      "id": "cafe",
+      "label": "Café",
+      "title": "Café",
+      "icon": "cup",
+      "items": [
+        { "id": "espresso", "name": "Espresso", "price": 2.5 },
+        { "id": "double-espresso", "name": "Double espresso", "price": 3 },
+        { "id": "filtre", "name": "Café filtre", "price": 4 },
+        { "id": "americano", "name": "Americano", "price": 3.5 },
+        { "id": "cortado", "name": "Cortado", "price": 4 },
+        { "id": "latte", "name": "Latte", "price": 5 },
+        { "id": "dirty-chai", "name": "Dirty Chai", "price": 5.5 },
+        { "id": "moka", "name": "Moka", "price": 5.5 },
+        { "id": "flat-white", "name": "Flat White", "price": 5 },
+        { "id": "cappuccino", "name": "Cappuccino", "price": 4.5 },
+        { "id": "cold-brew", "name": "Cold Brew", "price": 5.5 },
+        { "id": "iced-latte", "name": "Iced Latte", "price": 5.5 },
+        { "id": "iced-caramel-macchiato", "name": "Iced Caramel Macchiato", "price": 6 },
+        { "id": "iced-americano", "name": "Iced Americano", "price": 4 },
+        { "id": "extra-shot", "name": "Extra shot", "price": 0.5 }
+      ]
+    },
+    {
+      "id": "non-cafe",
+      "label": "Non-café",
+      "title": "Non-café",
+      "icon": "glass",
+      "items": [
+        { "id": "matcha-latte", "name": "Matcha Latte", "price": 5.5 },
+        { "id": "iced-matcha-latte", "name": "Iced Matcha Latte", "price": 6 },
+        { "id": "iced-matcha-latte-banane", "name": "Iced Matcha Latte Banane", "price": 6.9, "isNew": true },
+        { "id": "iced-matcha-latte-fraise", "name": "Iced Matcha Latte Fraise", "price": 6.9, "isNew": true },
+        { "id": "chocolat-chaud", "name": "Chocolat chaud", "price": 4.5 },
+        { "id": "lavande-latte", "name": "Lavande Latte", "price": 5 },
+        { "id": "iced-lavande-latte", "name": "Iced Lavande Latte", "price": 5.5 },
+        { "id": "chai-latte", "name": "Chai Latte", "price": 5 },
+        { "id": "iced-chai-latte", "name": "Iced Chai Latte", "price": 5.5 },
+        { "id": "lemonade-infusion", "name": "Lemonade / Infusion", "price": 4.5 },
+        {
+          "id": "the",
+          "name": "Thé",
+          "price": 5.5,
+          "options": ["Jasmin Blanc Bio", "T Revive Bio", "Kukicha Bio", "Comte Grey Bio"]
+        }
+      ]
+    },
+    {
+      "id": "vegetal",
+      "label": "Touches végétales",
+      "title": "Les touches végétales",
+      "icon": "sprout",
+      "items": [],
+      "notes": [
+        { "title": "Lait végétal", "text": "Avoine, amande ou coco. Notre petit plus, sans frais." },
+        { "title": "Votre cup bienvenue ici", "text": "Venez avec votre gobelet : profitez de 0,30 € de remise." }
+      ]
+    }
+  ]
+}
