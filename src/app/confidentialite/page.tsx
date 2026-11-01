@@ -14,7 +14,8 @@ export default function Confidentialite() {
       <LegalSection title="En bref">
         <p>
           Ce site est une vitrine. Il ne contient ni formulaire, ni compte client, ni outil de mesure
-          d&apos;audience, ni publicité. Il ne dépose aucun cookie.
+          d&apos;audience, ni publicité. Il ne dépose aucun cookie par lui-même : seule la carte
+          Google Maps de la page Infos, chargée uniquement à votre demande, peut en déposer.
         </p>
       </LegalSection>
 
@@ -42,6 +43,13 @@ export default function Confidentialite() {
           Les liens vers Instagram, Google Maps et Billetweb (réservation d&apos;ateliers) ouvrent ces
           services, qui appliquent leur propre politique de confidentialité. Aucune donnée n&apos;est
           transmise à ces services tant que vous ne cliquez pas sur ces liens.
+        </p>
+        <p>
+          Sur la page Infos, la carte Google Maps n&apos;est chargée que si vous cliquez sur
+          « Afficher la carte ». Google peut alors collecter des données de navigation et déposer des
+          cookies, selon sa propre politique de confidentialité. Votre choix est mémorisé dans votre
+          navigateur (localStorage) pour ne pas vous le redemander ; le lien « Ne plus afficher la
+          carte automatiquement », sous la carte, le retire à tout moment.
         </p>
       </LegalSection>
 

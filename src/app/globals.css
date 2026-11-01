@@ -244,12 +244,13 @@ body {
   padding-block: 0.14em 0.1em;
   margin-block: -0.14em -0.1em;
 }
+/* Bas généreux : les descendantes (y, g, p) d'Instrument Serif descendent loin. */
 .word-mask {
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
-  padding-block: 0.14em 0.1em;
-  margin-block: -0.14em -0.1em;
+  padding-block: 0.14em 0.3em;
+  margin-block: -0.14em -0.3em;
 }
 
 /* ---------- Loader : masqué avant le premier rendu si déjà vu ---------- */

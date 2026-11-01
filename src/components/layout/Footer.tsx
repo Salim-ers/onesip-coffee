@@ -15,17 +15,21 @@ export function Footer() {
       <div className="container-x pb-10 pt-24 sm:pt-32">
         <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <span className="line-mask">
+            {/* Le masque porte le déclenchement : le texte caché dessous n'est jamais « visible ». */}
+            <motion.span
+              className="line-mask -mb-[0.3em] pb-[0.3em]"
+              initial="hidden"
+              whileInView="shown"
+              viewport={{ once: true }}
+            >
               <motion.p
                 className="display text-[clamp(4rem,13vw,12.5rem)]"
-                initial={{ y: "100%" }}
-                whileInView={{ y: "0%" }}
-                viewport={{ once: true }}
+                variants={{ hidden: { y: "140%" }, shown: { y: "0%" } }}
                 transition={{ duration: 1.2, ease: SOFT }}
               >
                 See you <span className="italic text-caramel">soon.</span>
               </motion.p>
-            </span>
+            </motion.span>
           </div>
           <motion.div
             className="group relative mx-auto w-[min(70vw,22rem)] lg:col-span-4 lg:col-start-9 lg:w-full lg:max-w-[22rem]"

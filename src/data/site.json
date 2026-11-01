@@ -13,6 +13,7 @@
   },
   "geo": null,
   "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=11+rue+Camille+Desmoulins%2C+75011+Paris",
+  "mapsEmbedUrl": "https://www.google.com/maps?q=11+rue+Camille+Desmoulins,+75011+Paris&hl=fr&z=17&output=embed",
   "instagram": {
     "handle": "@onesip.paris",
     "url": "https://www.instagram.com/onesip.paris/"

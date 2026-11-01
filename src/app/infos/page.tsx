@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { Visit } from "@/components/sections/Visit";
+import { MapSection } from "@/components/sections/MapSection";
 import { NextPage } from "@/components/sections/NextPage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { OpenStatus } from "@/components/ui/OpenStatus";
@@ -44,6 +45,7 @@ export default function InfosPage() {
           </div>
         </PageHero>
         <Visit />
+        <MapSection />
       </main>
       <NextPage current="/infos" />
     </>

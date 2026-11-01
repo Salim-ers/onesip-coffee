@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { Fragment, type ElementType } from "react";
 
 type Props = {
@@ -21,9 +21,16 @@ type Props = {
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+const word: Variants = {
+  hidden: { y: "145%" },
+  shown: (d: number) => ({ y: "0%", transition: { duration: 1.05, ease: EASE, delay: d } }),
+};
+
 /**
  * Révélation typographique mot à mot, chaque mot sortant de son masque.
  * Le texte complet reste lisible par les lecteurs d'écran.
+ * Le déclenchement est porté par le conteneur : les mots, entièrement
+ * cachés sous leur masque, ne sont jamais « visibles » pour l'observateur.
  */
 export function RevealWords({
   lines,
@@ -40,24 +47,27 @@ export function RevealWords({
   return (
     <Tag id={id} className={className}>
       <span className="sr-only">{lines.join(" ").replace(/(^|\s)_/g, "$1")}</span>
-      <span aria-hidden="true">
+      <motion.span
+        aria-hidden="true"
+        initial="hidden"
+        {...(controlled
+          ? { animate: play ? "shown" : "hidden" }
+          : { whileInView: "shown", viewport: { once: true, margin: "0px 0px -12% 0px" } })}
+      >
         {lines.map((line, li) => (
           <span key={li} className={`block ${lineClassName ?? ""}`}>
-            {line.split(" ").map((word, wi) => {
+            {line.split(" ").map((w, wi) => {
               const d = delay + i++ * stagger;
               const words = line.split(" ");
               return (
                 <Fragment key={wi}>
                 <span className="word-mask">
                   <motion.span
-                    className={`inline-block will-change-transform ${word.startsWith("_") ? "pr-[0.06em] italic text-cannelle" : ""}`}
-                    initial={{ y: "108%" }}
-                    {...(controlled
-                      ? { animate: play ? { y: "0%" } : { y: "108%" } }
-                      : { whileInView: { y: "0%" }, viewport: { once: true, margin: "0px 0px -12% 0px" } })}
-                    transition={{ duration: 1.05, ease: EASE, delay: d }}
+                    className={`inline-block will-change-transform ${w.startsWith("_") ? "pr-[0.06em] italic text-cannelle" : ""}`}
+                    variants={word}
+                    custom={d}
                   >
-                    {word.replace(/^_/, "")}
+                    {w.replace(/^_/, "")}
                   </motion.span>
                 </span>
                 {wi < words.length - 1 ? " " : null}
@@ -66,7 +76,7 @@ export function RevealWords({
             })}
           </span>
         ))}
-      </span>
+      </motion.span>
     </Tag>
   );
 }
