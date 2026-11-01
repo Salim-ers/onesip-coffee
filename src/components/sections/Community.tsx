@@ -79,7 +79,7 @@ export function Community({ initialNow }: { initialNow: string }) {
 
                     {e.photo && (
                       <div className="relative hidden p-4 lg:block">
-                        <MaskReveal className="arch relative h-full min-h-[22rem] overflow-hidden bg-sable">
+                        <MaskReveal className="shape-ticket relative h-full min-h-[22rem] overflow-hidden bg-sable [--notch-y:70%]">
                           <Photo id={e.photo} sizes="19rem" />
                         </MaskReveal>
                       </div>

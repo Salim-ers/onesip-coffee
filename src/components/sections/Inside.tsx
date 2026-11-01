@@ -23,7 +23,7 @@ const tiles: Tile[] = [
     sizes: "(min-width: 1024px) 28vw, 50vw",
     lg: "lg:left-[3%] lg:top-[9%] lg:w-[21%] lg:h-[64%]",
     sm: "aspect-[3/4]",
-    shape: "arch",
+    shape: "shape-ticket [--notch-y:70%]",
   },
   {
     id: "13",
@@ -42,9 +42,9 @@ const tiles: Tile[] = [
   {
     id: "15",
     sizes: "(min-width: 1024px) 13vw, 50vw",
-    lg: "lg:left-[30%] lg:top-[71%] lg:w-[13%] lg:h-[25%]",
-    sm: "aspect-[3/4] mt-6",
-    shape: "arch",
+    lg: "lg:left-[29%] lg:top-[69%] lg:w-[15vw] lg:h-[15vw]",
+    sm: "aspect-square mt-6",
+    shape: "shape-biscuit",
     focus: "50% 35%",
   },
 ];

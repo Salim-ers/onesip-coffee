@@ -160,14 +160,16 @@ export function Header() {
             exit={{ clipPath: "circle(0% at calc(100% - 2.6rem) 2.25rem)" }}
             transition={{ duration: 0.75, ease: EASE }}
           >
-            {/* arche caramel en fond */}
+            {/* biscuit festonné en fond */}
             <motion.span
               aria-hidden
-              className="arch-full absolute -right-16 bottom-0 h-[62%] w-[78%] bg-cannelle/45"
-              initial={{ y: "40%" }}
-              animate={{ y: "0%" }}
+              className="absolute -bottom-[12%] -right-[30%] aspect-square w-[105%]"
+              initial={{ y: "40%", rotate: -40 }}
+              animate={{ y: "0%", rotate: 0 }}
               transition={{ duration: 1.1, ease: SOFT, delay: 0.25 }}
-            />
+            >
+              <span className="shape-biscuit block h-full w-full animate-[spin_70s_linear_infinite] bg-cannelle/45" />
+            </motion.span>
             <nav aria-label="Navigation mobile" className="relative flex flex-col">
               {navLinks.map((l, i) => (
                 <span key={l.href} className="line-mask">

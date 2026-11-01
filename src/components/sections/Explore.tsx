@@ -13,7 +13,7 @@ const tones: Record<Tone, string> = {
   latte: "bg-latte text-espresso",
 };
 
-/** Explorer — une carte de couleur par page, la photo dans une fenêtre en arche. */
+/** Explorer — un ticket de couleur par page : photo, ligne de découpe, titre. */
 export function Explore() {
   return (
     <section aria-labelledby="explore-title" className="relative py-28 sm:py-36 lg:py-44">
@@ -37,26 +37,30 @@ export function Explore() {
                 <FadeIn delay={i * 0.08} y={50} className={i % 2 ? "lg:mt-24" : ""}>
                   <TransitionLink
                     href={p.href}
-                    className={`group relative flex aspect-[3/4.3] flex-col overflow-hidden rounded-[2rem] p-6 transition-[border-radius] duration-700 ease-[var(--ease-soft)] hover:rounded-[3rem] sm:p-7 ${tones[p.tone]}`}
+                    className={`group shape-ticket relative flex aspect-[3/4.3] flex-col p-4 transition-[translate] duration-700 ease-[var(--ease-soft)] [--notch-y:66%] hover:-translate-y-2 sm:p-5 ${tones[p.tone]}`}
                   >
                     {/* disque qui grandit au survol */}
                     <span
                       aria-hidden
                       className="absolute -bottom-[30%] -right-[30%] aspect-square w-[85%] rounded-full bg-white/10 transition-transform duration-[900ms] ease-[var(--ease-soft)] group-hover:scale-[1.6]"
                     />
-                    <span className="relative flex items-start justify-between">
-                      <span className="label tabular opacity-75">{p.index}</span>
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-current/30 transition-all duration-500 ease-[var(--ease-soft)] group-hover:rotate-45 group-hover:border-creme group-hover:bg-creme group-hover:text-espresso">
-                        <ArrowUpRight aria-hidden className="h-5 w-5" strokeWidth={1.5} />
-                      </span>
-                    </span>
-                    <span className="arch relative mx-auto mt-4 w-[76%] flex-1 overflow-hidden">
+                    <span className="relative block h-[58%] overflow-hidden rounded-[1.1rem]">
                       <span className="absolute inset-0 transition-transform duration-[1.2s] ease-[var(--ease-soft)] group-hover:scale-[1.08]">
                         <Photo id={p.photo} sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 90vw" />
                       </span>
+                      <span className="label tabular absolute left-3 top-3 rounded-full bg-creme px-2.5 py-1 text-espresso">
+                        {p.index}
+                      </span>
+                      <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-creme text-espresso transition-transform duration-500 ease-[var(--ease-soft)] group-hover:rotate-45">
+                        <ArrowUpRight aria-hidden className="h-5 w-5" strokeWidth={1.5} />
+                      </span>
                     </span>
-                    <span className="display relative mt-6 text-[clamp(2.3rem,3vw,3rem)] leading-none">{p.label}</span>
-                    <span className="relative mt-2 text-[0.95rem] opacity-80">{p.blurb}</span>
+                    {/* ligne de découpe, au niveau des encoches */}
+                    <span aria-hidden className="absolute inset-x-7 top-[66%] border-t-2 border-dashed border-current/25" />
+                    <span className="relative mt-auto">
+                      <span className="display block text-[clamp(2.2rem,2.8vw,2.9rem)] leading-none">{p.label}</span>
+                      <span className="mt-2 block text-[0.95rem] opacity-80">{p.blurb}</span>
+                    </span>
                   </TransitionLink>
                 </FadeIn>
               </Parallax>

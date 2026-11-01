@@ -71,9 +71,11 @@ export function Visit() {
           <MaskReveal className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-sable sm:aspect-[5/4] lg:aspect-[4/5]">
             <Photo id="05" sizes="(min-width: 1024px) 72vw, (min-width: 640px) 100vw, 160vw" focus="70% 40%" />
           </MaskReveal>
-          <Parallax speed={-120} className="absolute -bottom-10 -right-1 w-[36%] sm:right-6 lg:-right-10 lg:bottom-24">
-            <MaskReveal delay={0.2} className="arch relative aspect-[3/4] overflow-hidden border-[5px] border-lait bg-sable">
-              <Photo id="15" sizes="(min-width: 1024px) 16vw, 36vw" focus="50% 35%" />
+          <Parallax speed={-120} className="absolute -bottom-12 -right-1 w-[42%] drop-shadow-[0_24px_24px_rgba(43,33,26,0.28)] sm:right-6 lg:-right-10 lg:bottom-20">
+            <MaskReveal delay={0.2} className="shape-biscuit relative aspect-square bg-lait p-[6px]">
+              <div className="shape-biscuit relative h-full w-full overflow-hidden bg-sable">
+                <Photo id="15" sizes="(min-width: 1024px) 18vw, 42vw" focus="50% 40%" />
+              </div>
             </MaskReveal>
           </Parallax>
           <Sparkle className="absolute -top-5 right-[14%] h-11 w-11 animate-[spin_22s_linear_infinite] text-caramel" delay={0.4} />

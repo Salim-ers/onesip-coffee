@@ -95,15 +95,19 @@ public/
 
 ## Direction artistique
 
-- **Motif signature : l'arche**, reprise des dossiers arrondis des chaises et des grandes baies du café. Elle sert de masque photographique du hero jusqu'au pied de page.
+- **Formes des photos**, propres à One Sip :
+  - *tranches* — la photo du hero découpée en bandes verticales décalées, chacune avec sa parallaxe (`ui/PhotoSlices`) ;
+  - *ticket* — rectangle à encoches latérales et ligne de découpe, comme un ticket de caisse ou une carte de fidélité (`.shape-ticket`, position des encoches réglable avec `[--notch-y:70%]`) ;
+  - *biscuit* — bord festonné des spéculoos et Biscoff de la carte, pour les petites photos, la pastille et le bloc Biscoff (`.shape-biscuit`) ;
+  - *polaroïd* — tirages scotchés et inclinés pour les moments (`.polaroid`).
 - **Palette relevée sur les photos** : lait `#F5EEE4`, crème `#FBF8F2`, sable `#E8DAC6`, chêne `#C49A6C`, matcha `#8A9150` / `#56623A`, espresso `#2B211A`.
 - **Bruns** : cacao `#4A2E1F`, cannelle `#8C5634`, caramel `#C0834F`, latte `#E3C9A8`. Un mot préfixé par `_` dans un titre `RevealWords` passe en italique cannelle.
-- **Formes** : arches (masques photo, arches de couleur décalées), étincelles, grains de café, vagues tracées, formes organiques qui respirent (`.blob`), pastille rotative.
+- **Formes décoratives** : cartes de couleur posées de travers, grilles de points (`.dots`), étincelles, grains de café, vagues tracées, formes organiques qui respirent (`.blob`), pastille festonnée rotative. L'arche ne reste que sur le bord du rideau de transition.
 - **Typographie** : Instrument Serif (titres), Figtree (texte). Polices auto-hébergées (`src/fonts`), aucune requête vers Google.
 
 ## Séquences animées
 
-1. **Loader + transitions entre pages** : un rideau caramel puis cacao monte avec un bord en arche, le logo s'y « remplit » de bas en haut avec le nom de la page, la page suivante se charge dessous, puis le rideau se lève et la page joue son entrée (titre mot à mot, photo qui s'ouvre dans l'arche). Le loader d'entrée est le même rideau, une fois par session.
+1. **Loader + transitions entre pages** : un rideau caramel puis cacao monte avec un bord en arche, le logo s'y « remplit » de bas en haut avec le nom de la page, la page suivante se charge dessous, puis le rideau se lève et la page joue son entrée (titre mot à mot, photo qui s'ouvre, tranche par tranche sur l'accueil). Le loader d'entrée est le même rideau, une fois par session.
 2. **Inside One Sip** (GSAP ScrollTrigger, desktop) : une photo plein cadre se resserre jusqu'à sa place dans une composition asymétrique pendant que les autres vues du lieu s'installent. Épinglage court (130 % de hauteur d'écran).
 3. **Nos signatures** : une ligne de noms géants glisse derrière les visuels pendant le défilement.
 4. **Dans le détail** (`/le-lieu`, desktop) : la section s'épingle et le défilement fait glisser la galerie à l'horizontale.

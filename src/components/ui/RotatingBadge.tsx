@@ -10,9 +10,12 @@ const tones = {
   lait: { bg: "var(--color-lait)", fg: "var(--color-espresso)", logo: "/brand/onesip-logo-espresso.webp" },
 } as const;
 
+/** Contour festonné du biscuit (même tracé que .shape-biscuit). */
+const BISCUIT = "M50 8.5A8.74 8.74 0 0 1 65.88 11.66A8.74 8.74 0 0 1 79.34 20.66A8.74 8.74 0 0 1 88.34 34.12A8.74 8.74 0 0 1 91.5 50A8.74 8.74 0 0 1 88.34 65.88A8.74 8.74 0 0 1 79.34 79.34A8.74 8.74 0 0 1 65.88 88.34A8.74 8.74 0 0 1 50 91.5A8.74 8.74 0 0 1 34.12 88.34A8.74 8.74 0 0 1 20.66 79.34A8.74 8.74 0 0 1 11.66 65.88A8.74 8.74 0 0 1 8.5 50A8.74 8.74 0 0 1 11.66 34.12A8.74 8.74 0 0 1 20.66 20.66A8.74 8.74 0 0 1 34.12 11.66A8.74 8.74 0 0 1 50 8.5Z";
+
 /**
- * Pastille ronde : texte circulaire qui tourne en continu et accélère avec
- * le défilement, la mascotte au centre.
+ * Pastille festonnée, comme un tampon ou un biscuit : texte circulaire qui
+ * tourne en continu et accélère avec le défilement, la mascotte au centre.
  */
 export function RotatingBadge({
   text = "One Sip Coffee ✦ Paris 11e ✦ Café & matcha ✦ ",
@@ -33,17 +36,17 @@ export function RotatingBadge({
       <motion.div style={{ rotate }} className="absolute inset-0">
         <svg viewBox="0 0 200 200" className="h-full w-full animate-[spin_26s_linear_infinite]">
           <defs>
-            <path id={id} d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0" />
+            <path id={id} d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0" />
           </defs>
-          <circle cx="100" cy="100" r="99" fill={t.bg} />
+          <path d={BISCUIT} fill={t.bg} transform="translate(-8.23 -8.23) scale(2.1645)" />
           <text fill={t.fg} fontSize="15" fontWeight="600" style={{ fontFamily: "var(--font-sans)", textTransform: "uppercase" }}>
-            <textPath href={`#${id}`} textLength="474" lengthAdjust="spacingAndGlyphs">
+            <textPath href={`#${id}`} textLength="436" lengthAdjust="spacingAndGlyphs">
               {text}
             </textPath>
           </text>
         </svg>
       </motion.div>
-      <div className="absolute inset-[27%]">
+      <div className="absolute inset-[29%]">
         <Image src={t.logo} alt="" width={1143} height={1123} sizes="6rem" className="h-auto w-full" />
       </div>
     </div>

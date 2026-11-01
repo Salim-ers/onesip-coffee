@@ -86,7 +86,7 @@ export function Signatures() {
             aria-labelledby="sig-speculoos"
             className="w-[82vw] max-w-[26rem] shrink-0 snap-center lg:col-span-5 lg:col-start-2 lg:w-auto lg:max-w-none"
           >
-            <MaskReveal className="arch relative aspect-[3/4.4] overflow-hidden bg-cannelle">
+            <MaskReveal className="shape-ticket relative aspect-[3/4.4] overflow-hidden bg-cannelle [--notch-y:74%]">
               <Photo id="09" sizes="(min-width: 1024px) 38vw, 82vw" focus="50% 55%" quality={80} />
             </MaskReveal>
             <div className="mt-8">
@@ -97,7 +97,7 @@ export function Signatures() {
             </div>
           </article>
 
-          {/* Chapitre 2 — Biscoff (nouveautés, sans photo dédiée) */}
+          {/* Chapitre 2 — Biscoff (nouveautés, sans photo dédiée) : un biscuit festonné */}
           <motion.article
             style={{ y: yB }}
             aria-labelledby="sig-biscoff"
@@ -105,7 +105,7 @@ export function Signatures() {
           >
             <MaskReveal
               delay={0.15}
-              className="arch relative flex aspect-[3/4.4] flex-col items-center justify-center overflow-hidden bg-caramel text-espresso"
+              className="shape-biscuit relative flex aspect-square flex-col items-center justify-center overflow-hidden bg-caramel text-espresso"
             >
               {/* cercles concentriques, comme une tasse vue du dessus */}
               <span aria-hidden className="absolute left-1/2 top-1/2 aspect-square w-[135%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-espresso/15" />

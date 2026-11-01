@@ -17,13 +17,13 @@ export function Footer() {
           <div className="lg:col-span-7">
             {/* Le masque porte le déclenchement : le texte caché dessous n'est jamais « visible ». */}
             <motion.span
-              className="line-mask -mb-[0.3em] pb-[0.3em]"
+              className="line-mask -mb-[0.32em] pb-[0.32em] text-[clamp(4rem,13vw,12.5rem)]"
               initial="hidden"
               whileInView="shown"
               viewport={{ once: true }}
             >
               <motion.p
-                className="display text-[clamp(4rem,13vw,12.5rem)]"
+                className="display"
                 variants={{ hidden: { y: "140%" }, shown: { y: "0%" } }}
                 transition={{ duration: 1.2, ease: SOFT }}
               >
@@ -40,13 +40,14 @@ export function Footer() {
           >
             <motion.span
               aria-hidden
-              className="arch-full absolute inset-x-[6%] -bottom-10 top-[8%] bg-cannelle/40"
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
+              className="absolute -inset-[3%]"
+              initial={{ scale: 0, rotate: -60 }}
+              whileInView={{ scale: 1, rotate: 0 }}
               viewport={{ once: true }}
-              style={{ originY: 1 }}
-              transition={{ duration: 1.3, ease: SOFT, delay: 0.3 }}
-            />
+              transition={{ duration: 1.4, ease: SOFT, delay: 0.3 }}
+            >
+              <span className="shape-biscuit block h-full w-full animate-[spin_70s_linear_infinite] bg-cannelle/40" />
+            </motion.span>
             <Sparkle className="absolute -right-2 top-0 h-10 w-10 animate-[spin_18s_linear_infinite] text-caramel" delay={0.6} />
             <Image
               src="/brand/onesip-logo-ivory.webp"

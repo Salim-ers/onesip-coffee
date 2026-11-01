@@ -27,7 +27,7 @@ export function NextPage({ current }: { current: string }) {
         {/* La photo de la page suivante pointe en arche, et monte au survol */}
         <span
           aria-hidden
-          className="arch absolute bottom-0 right-[22%] hidden w-[15vw] max-w-[15rem] translate-y-[55%] overflow-hidden border-[5px] border-caramel transition-transform duration-[900ms] ease-[var(--ease-soft)] group-hover:translate-y-[18%] lg:block"
+          className="shape-ticket absolute bottom-0 right-[22%] hidden w-[15vw] max-w-[15rem] translate-y-[55%] -rotate-6 overflow-hidden transition-[translate,rotate] duration-[900ms] ease-[var(--ease-soft)] group-hover:translate-y-[18%] group-hover:rotate-0 lg:block"
         >
           <span className="relative block aspect-[3/4]">
             <Photo id={next.photo} sizes="15rem" alt="" />

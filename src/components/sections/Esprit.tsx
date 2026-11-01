@@ -38,12 +38,14 @@ export function Esprit() {
             <Parallax speed={90} className="pointer-events-none absolute -left-[12%] top-[18%] aspect-square w-[85%]">
               <span aria-hidden className="blob block h-full w-full bg-latte/70" />
             </Parallax>
-            <MaskReveal className="arch relative aspect-[4/5] overflow-hidden bg-sable lg:aspect-[3/4]">
+            <MaskReveal className="shape-ticket relative aspect-[4/5] overflow-hidden bg-sable [--notch-y:72%] lg:aspect-[3/4]">
               <Photo id="14" sizes="(min-width: 1024px) 40vw, 100vw" focus="50% 60%" />
             </MaskReveal>
-            <Parallax speed={-110} className="absolute -bottom-10 right-4 w-[38%] sm:right-8 lg:-right-16 lg:bottom-16 lg:w-[42%]">
-              <MaskReveal className="relative aspect-[3/4] overflow-hidden rounded-2xl border-[5px] border-lait bg-sable" delay={0.2}>
-                <Photo id="11" sizes="(min-width: 1024px) 16vw, 38vw" />
+            <Parallax speed={-110} className="absolute -bottom-12 right-2 w-[44%] drop-shadow-[0_24px_24px_rgba(43,33,26,0.28)] sm:right-8 lg:-right-16 lg:bottom-12 lg:w-[48%]">
+              <MaskReveal className="shape-biscuit relative aspect-square bg-lait p-[6px]" delay={0.2}>
+                <div className="shape-biscuit relative h-full w-full overflow-hidden bg-sable">
+                  <Photo id="11" sizes="(min-width: 1024px) 20vw, 44vw" />
+                </div>
               </MaskReveal>
             </Parallax>
           </div>

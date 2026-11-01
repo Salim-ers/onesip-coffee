@@ -22,8 +22,8 @@ const tones: Record<Tone, string> = {
 
 /**
  * En-tête commun aux pages intérieures. Il joue son entrée quand le rideau
- * de transition se lève : numéro, titre mot à mot, photo en arche posée sur
- * une arche de couleur décalée, pastille qui tourne.
+ * de transition se lève : numéro, titre mot à mot, photo en ticket posée sur
+ * une carte de couleur de travers, pastille festonnée qui tourne.
  */
 export function PageHero({
   index,
@@ -111,19 +111,27 @@ export function PageHero({
 
         <div className="relative lg:col-span-5">
           <div className="relative mx-auto h-[56svh] min-h-[22rem] w-[86%] max-w-[32rem] sm:w-[70%] lg:h-full lg:min-h-[32rem] lg:w-full">
-            {/* Arche de couleur, décalée */}
+            {/* Carte de couleur, posée de travers sous le ticket */}
             <motion.div aria-hidden style={{ y: yBack }} className="absolute inset-0">
               <motion.div
-                className={`arch absolute inset-0 ${tones[tone]}`}
+                className={`absolute inset-0 rounded-[1.75rem] ${tones[tone]}`}
                 initial={reduce ? false : { opacity: 0, x: "0%", y: "0%", rotate: 0 }}
-                animate={done ? { opacity: 1, x: "7%", y: "5%", rotate: 3 } : undefined}
+                animate={done ? { opacity: 1, x: "6%", y: "4%", rotate: 5 } : undefined}
                 transition={{ duration: 1.5, ease: SOFT, delay: 0.55 }}
               />
             </motion.div>
+            <motion.span
+              aria-hidden
+              className="dots absolute -left-10 -top-8 h-36 w-36 text-cannelle/45"
+              initial={{ opacity: 0 }}
+              animate={done ? { opacity: 1 } : undefined}
+              transition={{ duration: 1, delay: 1 }}
+            />
 
             <motion.div style={{ y: yPhoto }} className="absolute inset-0">
+              {/* La photo en ticket : encoches latérales, comme un ticket de caisse */}
               <motion.div
-                className="arch absolute inset-0 overflow-hidden bg-sable"
+                className="shape-ticket absolute inset-0 overflow-hidden bg-sable [--notch-y:68%]"
                 initial={reduce ? false : { clipPath: "inset(100% 0% 0% 0%)" }}
                 animate={done ? { clipPath: "inset(0% 0% 0% 0%)" } : undefined}
                 transition={{ duration: 1.4, ease: CINE, delay: 0.1 }}
@@ -136,6 +144,8 @@ export function PageHero({
                 >
                   <Photo id={photo} priority quality={80} focus={focus} sizes={sizes} />
                 </motion.div>
+                {/* ligne de découpe */}
+                <span aria-hidden className="absolute inset-x-7 top-[68%] border-t-2 border-dashed border-creme/75" />
               </motion.div>
 
               <motion.div

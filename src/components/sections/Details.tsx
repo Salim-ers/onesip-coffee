@@ -22,7 +22,7 @@ const details: Detail[] = [
     title: "Les céramiques",
     text: "Des bols artisanaux empilés, comme à la maison.",
     frame: "aspect-[3/4] lg:w-[45vh]",
-    shape: "arch",
+    shape: "shape-ticket [--notch-y:72%]",
     chip: "bg-caramel text-espresso",
   },
   {
@@ -39,7 +39,7 @@ const details: Detail[] = [
     title: "L'enseigne",
     text: "Ronde, accrochée à la façade : elle vous guide depuis la rue.",
     frame: "aspect-[3/4] lg:w-[45vh]",
-    shape: "arch",
+    shape: "shape-ticket [--notch-y:72%]",
     chip: "bg-latte text-espresso",
     focus: "30% 40%",
   },
