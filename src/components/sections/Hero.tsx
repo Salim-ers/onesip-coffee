@@ -154,7 +154,8 @@ export function Hero() {
             <p className="lede text-taupe">
               Café de spécialité, matcha et créations gourmandes, au cœur du 11<sup>e</sup>.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            {/* Sur mobile et tablette, ces actions sont dans la barre fixe (MobileActions). */}
+            <div className="mt-7 hidden flex-wrap gap-3 lg:flex">
               <TransitionLink href="/carte" className="btn btn-solid">
                 Découvrir la carte
               </TransitionLink>

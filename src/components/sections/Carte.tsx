@@ -90,7 +90,7 @@ export function Carte() {
   }, [active]);
 
   return (
-    <section id="menu" aria-labelledby="carte-title" className="relative py-28 sm:py-36 lg:py-44">
+    <section id="menu" aria-labelledby="carte-title" className="relative -scroll-mt-16 py-28 sm:py-36 lg:py-44">
       <div className="container-x">
         <RevealWords id="carte-title" lines={["Au _menu."]} className="display h-md" />
 

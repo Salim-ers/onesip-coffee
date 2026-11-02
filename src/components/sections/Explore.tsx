@@ -37,7 +37,7 @@ export function Explore() {
                 <FadeIn delay={i * 0.08} y={50} className={i % 2 ? "lg:mt-24" : ""}>
                   <TransitionLink
                     href={p.href}
-                    className={`group shape-ticket relative flex aspect-[3/4.3] flex-col p-4 transition-[translate] duration-700 ease-[var(--ease-soft)] [--notch-y:66%] hover:-translate-y-2 sm:p-5 ${tones[p.tone]}`}
+                    className={`group shape-ticket relative flex aspect-[3/4.3] flex-col overflow-hidden p-4 transition-[translate] duration-700 ease-[var(--ease-soft)] [--notch-y:66%] hover:-translate-y-2 sm:p-5 ${tones[p.tone]}`}
                   >
                     {/* disque qui grandit au survol */}
                     <span

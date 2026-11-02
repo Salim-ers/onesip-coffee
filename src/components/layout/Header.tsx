@@ -113,7 +113,7 @@ export function Header() {
                 href={site.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-underline text-[0.95rem] font-medium text-taupe"
+                className="link-underline hidden text-[0.95rem] font-medium text-taupe lg:inline"
               >
                 {site.instagram.handle}
                 <span className="sr-only"> sur Instagram (nouvel onglet)</span>

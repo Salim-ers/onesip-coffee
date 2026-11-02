@@ -264,6 +264,14 @@ body {
   background: var(--color-latte);
 }
 
+.btn-caramel {
+  background: var(--color-caramel);
+  color: var(--color-espresso);
+}
+.btn-caramel::before {
+  background: var(--color-latte);
+}
+
 .btn-ghost-light {
   border: 1px solid color-mix(in oklab, var(--color-creme) 40%, transparent);
   color: var(--color-creme);

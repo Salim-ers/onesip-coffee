@@ -14,6 +14,14 @@ const TransitionCtx = createContext<Ctx>({ navigate: () => {} });
 /** Temps minimal de rideau fermé, pour que le logo ait le temps de se remplir. */
 const MIN_COVER_MS = 950;
 
+/** Place la nouvelle page sous le rideau : sur l'ancre demandée, sinon tout en haut. */
+function land(href: string) {
+  const { hash } = new URL(href, window.location.href);
+  const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+  if (target) target.scrollIntoView({ behavior: "instant" });
+  else window.scrollTo({ top: 0, behavior: "instant" });
+}
+
 /**
  * Transitions entre pages : le rideau monte en arche, le logo se remplit,
  * la nouvelle page se charge dessous, puis le rideau se lève. Sans
@@ -31,7 +39,7 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
 
   const reveal = useCallback(() => {
     window.clearTimeout(fallback.current);
-    window.scrollTo({ top: 0, behavior: "instant" });
+    if (pending.current) land(pending.current.href);
     setPhase("reveal");
     finish();
   }, [finish]);
@@ -82,7 +90,7 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const p = pending.current;
     if (!p || p.path !== pathname) return;
-    window.scrollTo({ top: 0, behavior: "instant" });
+    land(p.href);
     const t = window.setTimeout(reveal, Math.max(120, MIN_COVER_MS - (performance.now() - p.at)));
     return () => window.clearTimeout(t);
   }, [pathname, reveal]);

@@ -77,7 +77,8 @@ src/
   components/
     intro/             Loader (logo) + IntroProvider (synchronise rideau → entrées de page)
     transition/        LogoCurtain (rideau au logo), TransitionProvider, TransitionLink
-    layout/            Header (menu mobile plein écran), Footer, nav (pages, couleurs, page suivante)
+    layout/            Header (menu mobile plein écran), Footer, MobileActions (barre fixe carte + itinéraire,
+                       mobile et tablette), nav (pages, couleurs, page suivante)
     sections/          Hero, Maison, Esprit, Explore, Moments, PageHero, Signatures, Carte, PaperMenu,
                        Inside, Details, Community, Visit, NextPage
     ui/                Photo, RevealWords, MaskReveal/FadeIn, Parallax, ButtonLink, OpenStatus, Sketch,

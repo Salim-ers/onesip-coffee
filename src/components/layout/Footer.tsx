@@ -12,7 +12,7 @@ const SOFT = [0.22, 1, 0.36, 1] as const;
 export function Footer() {
   return (
     <footer className="relative overflow-clip bg-espresso text-creme">
-      <div className="container-x pb-10 pt-24 sm:pt-32">
+      <div className="container-x pb-28 pt-24 sm:pt-32 lg:pb-10">
         <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             {/* Le masque porte le déclenchement : le texte caché dessous n'est jamais « visible ». */}

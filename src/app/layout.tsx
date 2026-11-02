@@ -8,6 +8,7 @@ import { Loader } from "@/components/intro/Loader";
 import { TransitionProvider } from "@/components/transition/TransitionProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileActions } from "@/components/layout/MobileActions";
 import { INTRO_KEY } from "@/lib/intro";
 
 const title = `${site.name} — Café et bons moments partagés, Paris 11e`;
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
             {children}
             <Footer />
+            <MobileActions />
           </TransitionProvider>
         </IntroProvider>
       </body>
